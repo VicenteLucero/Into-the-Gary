@@ -26,10 +26,11 @@ public class GaryController : MonoBehaviour
         healthText = Canvas.FindObjectOfType<Text>();
         SetHealthText();
         animator = GetComponent<Animator>();
-        animator.SetTrigger("stand");
+        animator.SetBool("isSitting", false);
         transform.position = new Vector3(3.87f, -0.45f, -15.76f);
         transform.eulerAngles = new Vector3(0f, 266f, 0f);
         parts = new List<string>{"upperArmL", "upperArmR", "upperLegL", "upperLegR"};
+        
 
     }
 
@@ -38,6 +39,8 @@ public class GaryController : MonoBehaviour
     {
         pov = FindObjectOfType<CameraMov>().firstPerson;
         current_health = FindObjectOfType<GameManager>().health;
+
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -56,11 +59,11 @@ public class GaryController : MonoBehaviour
         {
             if (pov == false)
             {
-                transform.position = new Vector3(0.321f, -0.067f, -17.422f);
+                transform.position = new Vector3(0.321f, -0.616f, -17.422f);
                 transform.rotation = other.transform.rotation;
                 Debug.Log("choque con una silla");
                 FindObjectOfType<CameraMov>().ChangePerspective(other.tag);
-                animator.SetTrigger("sit");
+                animator.SetBool("isSitting", true);
             }
             
         }
@@ -98,23 +101,25 @@ public class GaryController : MonoBehaviour
         return val;
     }
 
-   
+    public void Move(InputValue value)
+    {
+        if (pov == false)
+        {
+            gary_movement = value.Get<Vector2>();
+            Vector3 movement = new Vector3(gary_movement.x, 0, gary_movement.y) * moveSpeed * Time.deltaTime;
+            transform.Translate(movement);
+            animator.SetBool("isWalking", true);
+        }
 
-    private void OnCamera(InputValue value)
+    }
+
+    public void Camera(InputValue value)
     {
         if (pov == false)
         {
             Vector2 cam_mov = value.Get<Vector2>();
             camera_mov = new Vector3(0f, cam_mov.x * cameraSensitivity, 0f);
             FindObjectOfType<CameraMov>().Rotation(camera_mov);
-        }    
-    }
-
-    public void Move(string tag)
-    {
-        if (tag == "upperArmL")
-        {
-            animator.SetTrigger("armLMove");
         }
     }
 }

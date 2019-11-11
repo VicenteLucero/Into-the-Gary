@@ -28,7 +28,7 @@
                 {
                     "name": "Camera",
                     "id": "9391dab8-7850-4468-9085-22eb9a906294",
-                    "expectedControlLayout": "Axis",
+                    "expectedControlLayout": "Stick",
                     "continuous": false,
                     "passThrough": false,
                     "processors": "",
@@ -63,7 +63,7 @@
                 },
                 {
                     "name": "",
-                    "path": "<Gamepad>/rightStick/x",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

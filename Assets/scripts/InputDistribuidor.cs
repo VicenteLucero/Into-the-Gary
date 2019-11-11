@@ -7,8 +7,6 @@ public class InputDistribuidor : MonoBehaviour
 {
     public string partControl;
     public GaryController gary;
-    Vector3 camera_mov;
-    private float cameraSensitivity = 180f;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,16 +31,17 @@ public class InputDistribuidor : MonoBehaviour
         Debug.Log("moving");
         //Vector2 part_mov = value.Get<Vector2>();
         //Vector2 movement = new Vector3(0f, part_mov.y, 0f);
-        gary.Move(partControl);
+        gary.Move(value);
 
     }
 
     void OnCamera(InputValue value)
     {
         Debug.Log("Camera");
-        Vector2 cam_mov = value.Get<Vector2>();
-        camera_mov = new Vector3(0f, cam_mov.x * cameraSensitivity, 0f);
-        FindObjectOfType<CameraMov>().Rotation(camera_mov);
+        gary.Camera(value);
+        //Vector2 cam_mov = value.Get<Vector2>();
+        //camera_mov = new Vector3(0f, cam_mov.x * cameraSensitivity, 0f);
+        //FindObjectOfType<CameraMov>().Rotation(camera_mov);
     }
 
 }

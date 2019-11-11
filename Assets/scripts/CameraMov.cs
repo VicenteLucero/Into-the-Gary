@@ -6,7 +6,6 @@ public class CameraMov : MonoBehaviour
 {
     public Transform target;
     public float distance = 1f;
-    private Vector3 garyHead;
     private Vector3 initialPosition;
     public bool firstPerson;
     // Start is called before the first frame update
@@ -33,7 +32,6 @@ public class CameraMov : MonoBehaviour
 
     public void ChangePerspective(string tag)
     {
-        garyHead = GameObject.FindGameObjectWithTag("Player").transform.position;
         Debug.Log("change was called");
         if (firstPerson == false)
         {

@@ -73,7 +73,6 @@
     <Compile Include="Assets\scripts\PartMovement.cs" />
     <Compile Include="Assets\scripts\RetryManager.cs" />
     <Compile Include="Assets\scripts\SphereDanger.cs" />
-    <None Include="Assets\Laptop\StandardColorMask.shader" />
     <Reference Include="Unity.InputSystem">
       <HintPath>C:/Users/Gamma/Desktop/proyecto/Into-the-Gary/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
     </Reference>
