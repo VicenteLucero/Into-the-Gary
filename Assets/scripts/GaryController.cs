@@ -65,6 +65,11 @@ public class GaryController : MonoBehaviour
             
         }
 
+        if (other.gameObject.CompareTag("Door"))
+        {
+            FindObjectOfType<GameManager>().ClearObjective(other.tag);
+        }
+
         current_health = current_health - damageAmount;
         SetHealthText();
         damageAmount = 0;

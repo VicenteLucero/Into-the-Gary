@@ -761,8 +761,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1954529, y: 2.3849335, z: 0.5198612}
-  m_Center: {x: -0.0015074015, y: 1.1299706, z: -0.047631264}
+  m_Size: {x: 1.1954529, y: 1.9684274, z: 0.5198612}
+  m_Center: {x: -0.0015074015, y: 0.9217175, z: -0.047631264}
 --- !u!1 &6664733502308089058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,6 +1021,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6664733502781677554}
+  - component: {fileID: 6540094300887586264}
   m_Layer: 0
   m_Name: Head
   m_TagString: GaryHead
@@ -1043,6 +1044,19 @@ Transform:
   m_Father: {fileID: 6664733503394355026}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6540094300887586264
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6664733502781677555}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18476751, y: 0.1615732, z: 0.12096648}
+  m_Center: {x: 0.00435324, y: 0.055309504, z: 0.1278424}
 --- !u!1 &6664733502788628563
 GameObject:
   m_ObjectHideFlags: 0

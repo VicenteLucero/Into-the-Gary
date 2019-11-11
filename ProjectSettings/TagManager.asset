@@ -21,6 +21,10 @@ TagManager:
   - handL
   - handR
   - knife
+  - pills
+  - ObjectiveText
+  - Water
+  - Door
   layers:
   - Default
   - TransparentFX

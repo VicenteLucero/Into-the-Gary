@@ -60,9 +60,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Apartment_Door\Scripts\DoorController.cs" />
+    <Compile Include="Assets\Apartment_Door\Scripts\KeyController.cs" />
+    <Compile Include="Assets\Apartment_Door\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\scripts\CameraMov.cs" />
     <Compile Include="Assets\scripts\CylinderDanger.cs" />
     <Compile Include="Assets\scripts\Damage.cs" />
+    <Compile Include="Assets\scripts\FPPObjective.cs" />
     <Compile Include="Assets\scripts\GameManager.cs" />
     <Compile Include="Assets\scripts\GaryController.cs" />
     <Compile Include="Assets\scripts\InputDistribuidor.cs" />
