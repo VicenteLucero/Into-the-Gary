@@ -18,9 +18,10 @@ public class FPPObjective : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("GaryHead"))
+        if (other.CompareTag("Player"))
         {
             FindObjectOfType<GameManager>().ClearObjective(tag);
+            GetComponent<AudioSource>().Play();
         }
     }
 

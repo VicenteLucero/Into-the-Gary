@@ -44,4 +44,14 @@ public class InputDistribuidor : MonoBehaviour
         //FindObjectOfType<CameraMov>().Rotation(camera_mov);
     }
 
+    void OnLeftArm()
+    {
+        gary.LeftArm();
+    }
+
+    void OnRightArm()
+    {
+        gary.RightArm();
+    }
+
 }

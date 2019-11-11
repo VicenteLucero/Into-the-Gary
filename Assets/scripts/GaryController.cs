@@ -16,7 +16,7 @@ public class GaryController : MonoBehaviour
     private float moveSpeed = 5f;
     private float cameraSensitivity = 180f;
     public bool pov;
-    private Animator animator;
+    public Animator animator;
     public List<string> parts;
     // Start is called before the first frame update
     void Start()
@@ -30,6 +30,7 @@ public class GaryController : MonoBehaviour
         transform.position = new Vector3(3.87f, -0.45f, -15.76f);
         transform.eulerAngles = new Vector3(0f, 266f, 0f);
         parts = new List<string>{"upperArmL", "upperArmR", "upperLegL", "upperLegR"};
+        GetComponent<AudioSource>().Play(0);
         
 
     }
@@ -64,6 +65,7 @@ public class GaryController : MonoBehaviour
                 Debug.Log("choque con una silla");
                 FindObjectOfType<CameraMov>().ChangePerspective(other.tag);
                 animator.SetBool("isSitting", true);
+                other.GetComponent<AudioSource>().Play();
             }
             
         }
@@ -121,5 +123,15 @@ public class GaryController : MonoBehaviour
             camera_mov = new Vector3(0f, cam_mov.x * cameraSensitivity, 0f);
             FindObjectOfType<CameraMov>().Rotation(camera_mov);
         }
+    }
+
+    public void LeftArm()
+    {
+        animator.SetTrigger("leftArm");
+    }
+
+    public void RightArm()
+    {
+        animator.SetTrigger("rightArm");
     }
 }

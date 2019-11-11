@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     public void ClearObjective(string tag)
     {
-        if (objective == 0 && tag == "objective_chair")
+        if (objective == 0)
         {
             objective = 1;
             SetObjetiveText("Take Your Pills");
@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
             objective = 3;
             SetObjetiveText("Go to the BathRoom");
             FindObjectOfType<GaryController>().pov = false;
+            FindObjectOfType<CameraMov>().ChangePerspective(tag);
+            FindObjectOfType<GaryController>().animator.SetBool("isSitting", false);
         }
 
         if (objective == 3 && tag == "Door")
