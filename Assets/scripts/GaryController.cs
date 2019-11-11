@@ -16,7 +16,8 @@ public class GaryController : MonoBehaviour
     private float moveSpeed = 5f;
     private float cameraSensitivity = 180f;
     public bool pov;
-
+    private Animator animator;
+    public List<string> parts;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,11 @@ public class GaryController : MonoBehaviour
         damageAmount = 0;
         healthText = Canvas.FindObjectOfType<Text>();
         SetHealthText();
-        
+        animator = GetComponent<Animator>();
+        animator.SetTrigger("stand");
+        transform.position = new Vector3(3.87f, -0.45f, -15.76f);
+        transform.eulerAngles = new Vector3(0f, 266f, 0f);
+        parts = new List<string>{"upperArmL", "upperArmR", "upperLegL", "upperLegR"};
 
     }
 
@@ -32,7 +37,6 @@ public class GaryController : MonoBehaviour
     void Update()
     {
         pov = FindObjectOfType<CameraMov>().firstPerson;
-        Move();
         current_health = FindObjectOfType<GameManager>().health;
     }
 
@@ -53,8 +57,10 @@ public class GaryController : MonoBehaviour
             if (pov == false)
             {
                 transform.position = new Vector3(0.321f, -0.067f, -17.422f);
+                transform.rotation = other.transform.rotation;
                 Debug.Log("choque con una silla");
                 FindObjectOfType<CameraMov>().ChangePerspective(other.tag);
+                animator.SetTrigger("sit");
             }
             
         }
@@ -79,19 +85,15 @@ public class GaryController : MonoBehaviour
         }
     }
 
-    private void Move()
+    public string SetPart()
     {
-        if(pov == false)
-        {
-            Vector3 movement = new Vector3(gary_movement.x, 0, gary_movement.y) * moveSpeed * Time.deltaTime;
-            transform.Translate(movement);
-        }
-        
+        int pos = Random.Range(0, 3);
+        string val = parts[pos];
+        parts.Remove(val);
+        return val;
     }
-    private void OnMove(InputValue value)
-    {
-        gary_movement = value.Get<Vector2>();
-    }
+
+   
 
     private void OnCamera(InputValue value)
     {
@@ -101,5 +103,13 @@ public class GaryController : MonoBehaviour
             camera_mov = new Vector3(0f, cam_mov.x * cameraSensitivity, 0f);
             FindObjectOfType<CameraMov>().Rotation(camera_mov);
         }    
+    }
+
+    public void Move(string tag)
+    {
+        if (tag == "upperArmL")
+        {
+            animator.SetTrigger("armLMove");
+        }
     }
 }

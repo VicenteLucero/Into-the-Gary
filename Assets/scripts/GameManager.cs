@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
+    bool objectiveComplete = false;
     public int health = 100;
 
     public void EndGame()

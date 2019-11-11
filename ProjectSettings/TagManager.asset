@@ -20,6 +20,7 @@ TagManager:
   - lowerLegR
   - handL
   - handR
+  - knife
   layers:
   - Default
   - TransparentFX
