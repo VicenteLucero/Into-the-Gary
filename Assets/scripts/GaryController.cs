@@ -14,7 +14,7 @@ public class GaryController : MonoBehaviour
     Vector2 gary_movement;
     Vector3 camera_mov;
     private float moveSpeed = 5f;
-    private float cameraSensitivity = 180f;
+    private float cameraSensitivity = 10f;
     public bool pov;
     public Animator animator;
     public List<string> parts;
@@ -120,7 +120,7 @@ public class GaryController : MonoBehaviour
         if (pov == false)
         {
             Vector2 cam_mov = value.Get<Vector2>();
-            camera_mov = new Vector3(0f, cam_mov.x * cameraSensitivity, 0f);
+            camera_mov += new Vector3(0f, cam_mov.x * cameraSensitivity, 0f);
             FindObjectOfType<CameraMov>().Rotation(camera_mov);
         }
     }

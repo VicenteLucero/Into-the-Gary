@@ -6,13 +6,13 @@ public class CameraMov : MonoBehaviour
 {
     public Transform target;
     public float distance = 1f;
-    private Vector3 initialPosition;
+    
     public bool firstPerson;
     // Start is called before the first frame update
     void Start()
     {
         
-        initialPosition = this.transform.position;
+        
         firstPerson = false;
     }
 
@@ -25,7 +25,7 @@ public class CameraMov : MonoBehaviour
     public void Rotation(Vector3 rotation)
     {
         transform.eulerAngles = rotation;
-        transform.position = target.position - transform.forward * distance;
+       
     }
 
     
@@ -45,7 +45,7 @@ public class CameraMov : MonoBehaviour
 
         else if (firstPerson == true)
         {
-            transform.position = initialPosition;
+            
             firstPerson = false;
         }
     }
