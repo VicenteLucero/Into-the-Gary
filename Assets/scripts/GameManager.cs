@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
 
     void LevelComplete()
     {
-        SceneManager.LoadScene("Lvl1Complete");
+        SceneManager.LoadScene("LvlComplete");
     }
 
     void SetObjetiveText(string newObj)

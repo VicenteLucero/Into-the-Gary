@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Input.Plugins.PlayerInput;
+using UnityEngine.SceneManagement;
 
 public class InputDistribuidor : MonoBehaviour
 {
@@ -53,5 +54,15 @@ public class InputDistribuidor : MonoBehaviour
     {
         gary.RightArm();
     }
+
+    void OnBack()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    void OnQuit()
+    {
+        Application.Quit();
+    } 
 
 }
