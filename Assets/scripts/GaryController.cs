@@ -13,11 +13,12 @@ public class GaryController : MonoBehaviour
     public Text healthText;
     Vector2 gary_movement;
     Vector3 camera_mov;
-    private float moveSpeed = 5f;
+    public float moveSpeed = 5f;
     private float cameraSensitivity = 10f;
     public bool pov;
     public Animator animator;
     public List<string> parts;
+    Rigidbody body;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +32,7 @@ public class GaryController : MonoBehaviour
         transform.eulerAngles = new Vector3(0f, 266f, 0f);
         parts = new List<string>{"upperArmL", "upperArmR", "upperLegL", "upperLegR"};
         GetComponent<AudioSource>().Play(0);
-        
+        body = GetComponent<Rigidbody>();
 
     }
 
@@ -108,8 +109,9 @@ public class GaryController : MonoBehaviour
         if (pov == false)
         {
             gary_movement = value.Get<Vector2>();
-            Vector3 movement = new Vector3(gary_movement.x, 0, gary_movement.y) * moveSpeed * Time.deltaTime;
-            transform.Translate(movement);
+            Vector3 movement = new Vector3(-gary_movement.y, 0, gary_movement.x) * moveSpeed;
+            Debug.Log(movement.z);
+            body.AddForce(movement);
             animator.SetBool("isWalking", true);
         }
 

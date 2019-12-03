@@ -23,13 +23,13 @@ public class InputDistribuidor : MonoBehaviour
 
     void OnStartButton()
     {
-        Debug.Log("start");
+        
         
     }
 
     void OnMove(InputValue value)
     {
-        Debug.Log("moving");
+      
         //Vector2 part_mov = value.Get<Vector2>();
         //Vector2 movement = new Vector3(0f, part_mov.y, 0f);
         gary.Move(value);
@@ -38,7 +38,7 @@ public class InputDistribuidor : MonoBehaviour
 
     void OnCamera(InputValue value)
     {
-        Debug.Log("Camera");
+        
         gary.Camera(value);
         //Vector2 cam_mov = value.Get<Vector2>();
         //camera_mov = new Vector3(0f, cam_mov.x * cameraSensitivity, 0f);
