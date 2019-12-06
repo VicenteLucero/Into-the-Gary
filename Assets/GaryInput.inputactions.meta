@@ -3,13 +3,10 @@ guid: 91efb91dee9517447bda918b1ce8c916
 ScriptedImporter:
   fileIDToRecycleName:
     11400000: <root>
-    11400002: Test_Input/LeftArm
-    11400004: Test_Input/RightArm
-    11400006: Test_Input/Back
-    11400008: Test_Input/Quit
-    11400024: Test_Input/Move
-    11400028: Test_Input/StartButton
-    11400030: Test_Input/Camera
+    11400006: Inputs /Movement
+    11400008: Inputs /Camera
+    11400016: Inputs /Back
+    11400018: Inputs /Quit
   externalObjects: {}
   userData: 
   assetBundleName: 

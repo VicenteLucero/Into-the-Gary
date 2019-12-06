@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StartMenu : MonoBehaviour
 {
     static int level = 0;
     List<string> levels = new List<string>();
+    static string currentScene;
+    Text canvasText;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +22,56 @@ public class StartMenu : MonoBehaviour
         levels.Add("Level6");
         levels.Add("Level7");
         levels.Add("Level8");
+
+        currentScene = SceneManager.GetActiveScene().name;
+        if (currentScene == "LvlComplete")
+        {
+            canvasText = GameObject.FindGameObjectWithTag("winText").GetComponent<Text>();
+            if (level == 0)
+            {
+                canvasText.text = "¡¡¡Tomaste tus Pastillas!!!" + "\r\n" +"¡¡¡FELICIDADES!!!" + "\r\n" + "Ya no acumularas estupideces"; 
+            }
+
+            if (level == 1)
+            {
+                canvasText.text = "" + "\r\n" + "";
+            }
+
+            if (level == 2)
+            {
+                canvasText.text = "" + "\r\n" + "" + "\r\n" + "";
+            }
+
+            if (level == 3)
+            {
+                canvasText.text = "" + "\r\n" + "" + "\r\n" + "";
+            }
+
+            if (level == 4)
+            {
+                canvasText.text = "" + "\r\n" + "" + "\r\n" + "";
+            }
+
+            if (level == 5)
+            {
+                canvasText.text = "" + "\r\n" + "" + "\r\n" + "";
+            }
+
+            if (level == 6)
+            {
+                canvasText.text = "" + "\r\n" + "" + "\r\n" + "";
+            }
+
+            if (level == 7)
+            {
+                canvasText.text = "" + "\r\n" + "" + "\r\n" + "";
+            }
+        }
     }
 
-    // Update is called once per frame
     public void PlayButton()
     {
+        SaveInfo.SetLevel(1);
         SceneManager.LoadScene(levels[level]);
     }
 
@@ -35,13 +84,14 @@ public class StartMenu : MonoBehaviour
         else
         {
             level += 1;
-            SceneManager.LoadScene(levels[level]);
+            SaveInfo.SetLevel(level + 1);
+            SceneManager.LoadScene("House");
         }
     }
 
     public void RetryButton()
     {
-        SceneManager.LoadScene(levels[level]);
+        SceneManager.LoadScene("House");
     }
 
     public void LevelSelect()
@@ -64,49 +114,56 @@ public class StartMenu : MonoBehaviour
     public void Level1()
     {
         level = 0;
-        SceneManager.LoadScene(levels[level]);
+        SceneManager.LoadScene("House");
     }
 
     public void Level2()
     {
         level = 1;
-        SceneManager.LoadScene(levels[level]);
+        SaveInfo.SetLevel(level + 1);
+        SceneManager.LoadScene("House");
 
     }
 
     public void Level3()
     {
         level = 2;
-        SceneManager.LoadScene(levels[level]);
+        SaveInfo.SetLevel(level + 1);
+        SceneManager.LoadScene("House");
     }
 
     public void Level4()
     {
         level = 3;
-        SceneManager.LoadScene(levels[level]);
+        SaveInfo.SetLevel(level + 1);
+        SceneManager.LoadScene("House");
     }
 
     public void Level5()
     {
         level = 4;
-        SceneManager.LoadScene(levels[level]);
+        SaveInfo.SetLevel(level + 1);
+        SceneManager.LoadScene("House");
     }
 
     public void Level6()
     {
         level = 5;
-        SceneManager.LoadScene(levels[level]);
+        SaveInfo.SetLevel(level + 1);
+        SceneManager.LoadScene("House");
     }
 
     public void Level7()
     {
         level = 6;
-        SceneManager.LoadScene(levels[level]);
+        SaveInfo.SetLevel(level + 1);
+        SceneManager.LoadScene("House");
     }
 
     public void Level8()
     {
         level = 7;
-        SceneManager.LoadScene(levels[level]);
+        SaveInfo.SetLevel(level + 1);
+        SceneManager.LoadScene("House");
     }
 }

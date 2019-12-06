@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partControl: 
+  gary: {fileID: 0}
 --- !u!114 &7434090556640594114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,6 +74,6 @@ MonoBehaviour:
   m_ActionEvents: []
   m_AutoSwitchControlScheme: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: '{1565aebc-39bd-4832-849f-fcfa7341d432}'
+  m_DefaultActionMap: '{a8b29213-c066-49e1-b6a4-dbc275b8d147}'
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

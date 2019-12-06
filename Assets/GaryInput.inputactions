@@ -2,53 +2,13 @@
     "name": "GaryInput",
     "maps": [
         {
-            "name": "Test_Input",
-            "id": "1565aebc-39bd-4832-849f-fcfa7341d432",
+            "name": "Inputs ",
+            "id": "a8b29213-c066-49e1-b6a4-dbc275b8d147",
             "actions": [
                 {
-                    "name": "StartButton",
-                    "id": "cf8d0a6a-a18c-471e-aa90-bfcb4ceb7707",
-                    "expectedControlLayout": "Button",
-                    "continuous": false,
-                    "passThrough": false,
-                    "processors": "",
-                    "interactions": "",
-                    "bindings": []
-                },
-                {
-                    "name": "Move",
-                    "id": "bee6a053-255c-42af-8034-9d3bf4dded61",
+                    "name": "Movement",
+                    "id": "f2c33b29-1c82-429b-9743-fe7e0bf261c6",
                     "expectedControlLayout": "Stick",
-                    "continuous": false,
-                    "passThrough": false,
-                    "processors": "",
-                    "interactions": "",
-                    "bindings": []
-                },
-                {
-                    "name": "Camera",
-                    "id": "9391dab8-7850-4468-9085-22eb9a906294",
-                    "expectedControlLayout": "Stick",
-                    "continuous": false,
-                    "passThrough": false,
-                    "processors": "",
-                    "interactions": "",
-                    "bindings": []
-                },
-                {
-                    "name": "LeftArm",
-                    "id": "6b372ef0-69f6-48bb-b4a9-40a5438dd530",
-                    "expectedControlLayout": "Button",
-                    "continuous": false,
-                    "passThrough": false,
-                    "processors": "",
-                    "interactions": "",
-                    "bindings": []
-                },
-                {
-                    "name": "RightArm",
-                    "id": "b88e3469-cdf2-4bee-b6ab-ac7e8288434b",
-                    "expectedControlLayout": "Button",
                     "continuous": false,
                     "passThrough": false,
                     "processors": "",
@@ -57,7 +17,7 @@
                 },
                 {
                     "name": "Back",
-                    "id": "acda7e48-e252-4d61-9ff0-e023784b33de",
+                    "id": "27f393f1-0a38-407a-82db-c5c7ff7185a7",
                     "expectedControlLayout": "Button",
                     "continuous": false,
                     "passThrough": false,
@@ -67,8 +27,18 @@
                 },
                 {
                     "name": "Quit",
-                    "id": "c28109f7-9fd7-45c1-9485-8888985c92dd",
+                    "id": "27f393f1-0a38-407a-82db-c5c7ff7185a7",
                     "expectedControlLayout": "Button",
+                    "continuous": false,
+                    "passThrough": false,
+                    "processors": "",
+                    "interactions": "",
+                    "bindings": []
+                },
+                {
+                    "name": "Camera",
+                    "id": "27f393f1-0a38-407a-82db-c5c7ff7185a7",
+                    "expectedControlLayout": "Stick",
                     "continuous": false,
                     "passThrough": false,
                     "processors": "",
@@ -79,59 +49,11 @@
             "bindings": [
                 {
                     "name": "",
-                    "path": "<Gamepad>/start",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "StartButton",
-                    "chainWithPrevious": false,
-                    "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
-                },
-                {
-                    "name": "",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
-                    "chainWithPrevious": false,
-                    "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
-                },
-                {
-                    "name": "",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Camera",
-                    "chainWithPrevious": false,
-                    "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
-                },
-                {
-                    "name": "",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "LeftArm",
-                    "chainWithPrevious": false,
-                    "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
-                },
-                {
-                    "name": "",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RightArm",
+                    "action": "Movement",
                     "chainWithPrevious": false,
                     "isComposite": false,
                     "isPartOfComposite": false,
@@ -156,6 +78,18 @@
                     "processors": "",
                     "groups": "",
                     "action": "Quit",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Camera",
                     "chainWithPrevious": false,
                     "isComposite": false,
                     "isPartOfComposite": false,

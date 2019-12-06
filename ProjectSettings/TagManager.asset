@@ -7,24 +7,19 @@ TagManager:
   - danger
   - cylinder
   - sphere
-  - GaryHead
   - objective
   - objective_chair
-  - upperArmL
-  - upperArmR
-  - lowerArmL
-  - lowerArmR
-  - upperLegL
-  - upperLegR
-  - lowerLegL
-  - lowerLegR
-  - handL
-  - handR
   - knife
   - pills
   - ObjectiveText
   - Water
   - Door
+  - winText
+  - HealthText
+  - RL
+  - RA
+  - LL
+  - LA
   layers:
   - Default
   - TransparentFX

@@ -4,67 +4,86 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    bool gameHasEnded = false;
-    bool objectiveComplete = false;
-    public int health = 100;
-    public int objective = 0;
-    public GameObject objectiveText;
+    static int currentLevel = 0;
+    static int currentObjective = 0;
+    static public Vector3 position;
+    static public Vector3 rotation;
+
+
+    private void Start()
+    {
+        if (currentObjective != 0)
+        {
+           
+        }
+
+        currentLevel = SaveInfo.GetLevel();
+
+    }
+
+
+    public void ClearObj(string tag)
+    {
+        if (currentLevel == 1)
+        {
+            GetComponent<Level1>().ClearObjective(tag);
+            currentObjective += 1;
+        }
+
+        if (currentLevel == 2)
+        {
+            GetComponent<Level2>().ClearObjective(tag);
+            currentObjective += 1;
+        }
+
+        if (currentLevel == 3)
+        {
+            GetComponent<Level3>().ClearObjective(tag);
+            currentObjective += 1;
+        }
+
+        if (currentLevel == 4)
+        {
+            GetComponent<Level4>().ClearObjective(tag);
+            currentObjective += 1;
+        }
+
+        if (currentLevel == 5)
+        {
+            GetComponent<Level5>().ClearObjective(tag);
+            currentObjective += 1;
+        }
+        if (currentLevel == 6)
+        {
+            GetComponent<Level6>().ClearObjective(tag);
+            currentObjective += 1;
+        }
+
+        if (currentLevel == 7)
+        {
+            GetComponent<Level7>().ClearObjective(tag);
+            currentObjective += 1;
+        }
+
+        if (currentLevel == 8)
+        {
+            GetComponent<Level8>().ClearObjective(tag);
+            currentObjective += 1;
+        }
+    }
+
 
     public void EndGame()
     {
-        if (gameHasEnded == false)
-        {
-            gameHasEnded = true;
-            Debug.Log("Game Over");
-            Restart();
-        }
-
-    }
-
-    public void ClearObjective(string tag)
-    {
-        if (objective == 0)
-        {
-            objective = 1;
-            SetObjetiveText("Take Your Pills");
-        }
-
-        if (objective == 1 && tag == "pills")
-        {
-            objective = 2;
-            SetObjetiveText("Drink Water");
-        }
-
-        if (objective == 2 && tag == "Water")
-        {
-            objective = 3;
-            SetObjetiveText("Go to the BathRoom");
-            FindObjectOfType<GaryController>().pov = false;
-            FindObjectOfType<CameraMov>().ChangePerspective(tag);
-            FindObjectOfType<GaryController>().animator.SetBool("isSitting", false);
-        }
-
-        if (objective == 3 && tag == "Door")
-        {
-            LevelComplete();
-        }
-
-    }
-
-    void LevelComplete()
-    {
-        SceneManager.LoadScene("LvlComplete");
-    }
-
-    void SetObjetiveText(string newObj)
-    {
-        objectiveText = GameObject.FindGameObjectWithTag("ObjectiveText");
-        objectiveText.GetComponent<Text>().text = "OBJECTIVE: " + newObj;
-    }
-
-    void Restart()
-    {
+        currentObjective = 0;
+        Debug.Log("Game Over");
         SceneManager.LoadScene("GameOver");
+    }
+
+    public void LevelComplete()
+    {
+        currentObjective = 0;
+        SceneManager.LoadScene("LvlComplete");
     }
 }
 
