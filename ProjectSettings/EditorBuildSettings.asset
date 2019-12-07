@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 1/perspective_1.unity
     guid: 99fe9b31c2cbde24faf7f5350a85fec4
   - enabled: 1
+    path: Assets/Scenes/Level 3/perspective_2.unity
+    guid: 2296c122fddc0c64287f753157856122
+  - enabled: 1
     path: Assets/Scenes/House.unity
     guid: 2ebcd996995d5244594eb244009f3ae6
   - enabled: 1

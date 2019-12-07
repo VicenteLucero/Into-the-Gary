@@ -31,7 +31,19 @@ public class InputDistribuidor : MonoBehaviour
         }
         gary = FindObjectOfType<GaryController>();
     }
-    
+
+    private void Update()
+    {
+        if (Input.GetKey("backspace"))
+        {
+            SceneManager.LoadScene("Menu");
+        }
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
+    }
+
 
     void OnCamera(InputValue value)
     {
@@ -39,25 +51,20 @@ public class InputDistribuidor : MonoBehaviour
     }
 
 
-    void OnBack()
-    {
-        SceneManager.LoadScene("Menu");
-    }
-
-    void OnQuit()
-    {
-        Application.Quit();
-    } 
-
     void OnMovement(InputValue value)
     {
         Vector3 move = value.Get<Vector2>();
-        Vector3 movement = new Vector3(move.x, 0, 0)*200;
+        Vector3 movement = new Vector3(move.x, 0f, move.y)*1000;
         if (partControl == "LA" || partControl == "RA")
         {
-            movement = new Vector3(move.x, move.y, 0) * 10;
+            movement = new Vector3(0f, move.y, -move.x);
+            rb.velocity = movement;
         }
-        rb.AddForce(movement);
+        else
+        {
+            rb.velocity = movement * 0.003f;
+        }
+        
     }
 
    

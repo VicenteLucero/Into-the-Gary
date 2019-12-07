@@ -4,23 +4,38 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static int health;
     static int currentLevel = 0;
     static int currentObjective = 0;
-    static public Vector3 position;
-    static public Vector3 rotation;
+    
 
 
     private void Start()
     {
-        if (currentObjective != 0)
+        if (currentObjective != 0 && SaveInfo.pov == false)
         {
-           
+            GameObject.FindGameObjectWithTag("gary").transform.position = SaveInfo.gPosition;
+            GameObject.FindGameObjectWithTag("gary").transform.eulerAngles = SaveInfo.gRotation;
+        }
+        else
+        {
+            health = 100; 
         }
 
         currentLevel = SaveInfo.GetLevel();
 
     }
 
+
+    public int GetHealth()
+    {
+        return health;
+    }
+
+    public void SetHealth(int salud)
+    {
+        health = salud;
+    }
 
     public void ClearObj(string tag)
     {

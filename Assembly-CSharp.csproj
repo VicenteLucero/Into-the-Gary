@@ -67,6 +67,8 @@
     <Compile Include="Assets\prefabs\gary\Feet_Controll.cs" />
     <Compile Include="Assets\prefabs\gary\Follow_target.cs" />
     <Compile Include="Assets\prefabs\gary\Hand_Controll.cs" />
+    <Compile Include="Assets\RPG Food &amp; Drinks Pack\Assets\Scripts\Consumer.cs" />
+    <Compile Include="Assets\RPG Food &amp; Drinks Pack\Assets\Scripts\Rotator.cs" />
     <Compile Include="Assets\Scenes\Level 1\Level1.cs" />
     <Compile Include="Assets\Scenes\Level 2\Level2.cs" />
     <Compile Include="Assets\Scenes\Level 3\Level3.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="Assets\scripts\Damage.cs" />
     <Compile Include="Assets\scripts\GameManager.cs" />
     <Compile Include="Assets\scripts\GaryController.cs" />
+    <Compile Include="Assets\scripts\Handsetter.cs" />
     <Compile Include="Assets\scripts\InputDistribuidor.cs" />
     <Compile Include="Assets\scripts\PartMovement.cs" />
     <Compile Include="Assets\scripts\PlayAudio.cs" />

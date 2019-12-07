@@ -20,6 +20,11 @@ TagManager:
   - RA
   - LL
   - LA
+  - gary
+  - bread
+  - ham
+  - potion
+  - jar
   layers:
   - Default
   - TransparentFX

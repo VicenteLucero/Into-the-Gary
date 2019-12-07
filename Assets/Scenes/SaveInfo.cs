@@ -6,6 +6,9 @@ public class SaveInfo
 {
     static int level = 0;
     static int objective = 0;
+    public static bool pov = false;
+    public static Vector3 gPosition;
+    public static Vector3 gRotation;
 
     public static int GetLevel()
     {
@@ -26,6 +29,8 @@ public class SaveInfo
     {
         objective = obj;
     }
+
+
 
 
 

@@ -16,26 +16,6 @@
                     "bindings": []
                 },
                 {
-                    "name": "Back",
-                    "id": "27f393f1-0a38-407a-82db-c5c7ff7185a7",
-                    "expectedControlLayout": "Button",
-                    "continuous": false,
-                    "passThrough": false,
-                    "processors": "",
-                    "interactions": "",
-                    "bindings": []
-                },
-                {
-                    "name": "Quit",
-                    "id": "27f393f1-0a38-407a-82db-c5c7ff7185a7",
-                    "expectedControlLayout": "Button",
-                    "continuous": false,
-                    "passThrough": false,
-                    "processors": "",
-                    "interactions": "",
-                    "bindings": []
-                },
-                {
                     "name": "Camera",
                     "id": "27f393f1-0a38-407a-82db-c5c7ff7185a7",
                     "expectedControlLayout": "Stick",
@@ -54,30 +34,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Movement",
-                    "chainWithPrevious": false,
-                    "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
-                },
-                {
-                    "name": "",
-                    "path": "<Keyboard>/backspace",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Back",
-                    "chainWithPrevious": false,
-                    "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
-                },
-                {
-                    "name": "",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Quit",
                     "chainWithPrevious": false,
                     "isComposite": false,
                     "isPartOfComposite": false,

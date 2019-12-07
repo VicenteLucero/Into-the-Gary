@@ -24,12 +24,18 @@ public class GaryController : MonoBehaviour
     void Start()
     {
 
-        current_health = FindObjectOfType<Level1>().GetHealth();
+        current_health = FindObjectOfType<GameManager>().GetHealth();
         damageAmount = 0;
         healthText = GameObject.FindGameObjectWithTag("HealthText").GetComponent<Text>();
         SetHealthText();
-        parts = new List<string>{"LL", "RL"};
-        GetComponent<AudioSource>().Play(0);
+        if (SaveInfo.pov == false)
+        {
+            parts = new List<string> { "LL", "RL" };
+        }
+        if (SaveInfo.pov == true)
+        {
+            parts = new List<string> { "LA", "RA" };
+        }
         body = GetComponent<Rigidbody>();
 
     }
@@ -37,44 +43,75 @@ public class GaryController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        current_health = FindObjectOfType<Level1>().GetHealth();
+        current_health = FindObjectOfType<GameManager>().GetHealth();
     }
 
     void OnTriggerEnter(Collider other)
     {
 
         if (other.gameObject.CompareTag("objective_chair"))
-        {
-            Debug.Log("choque con una silla");
+        {            
             other.GetComponent<AudioSource>().Play();
             FindObjectOfType<GameManager>().ClearObj(other.tag);
-
-
         }
 
         if (other.gameObject.CompareTag("Door"))
         {
+
             FindObjectOfType<GameManager>().ClearObj(other.tag);
         }
 
-        current_health = current_health - damageAmount;
+        if (other.gameObject.CompareTag("pills"))
+        {
+            
+            FindObjectOfType<GameManager>().ClearObj(other.tag);
+        }
+
+        if (other.gameObject.CompareTag("Water"))
+        {
+            
+            FindObjectOfType<GameManager>().ClearObj(other.tag);
+        }
+
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            FindObjectOfType<GameManager>().ClearObj(other.tag);
+        }
+        if (other.gameObject.CompareTag("potion"))
+        {
+            damageAmount = 20;
+            other.gameObject.SetActive(false);
+        }
+        if (other.gameObject.CompareTag("knife"))
+        {
+            damageAmount = 35;
+        }
+
+        if (other.gameObject.CompareTag("bread") || other.gameObject.CompareTag("jar") || other.gameObject.CompareTag("ham"))
+        {
+            Debug.Log("INGREDIENTES!!!!!");        
+            FindObjectOfType<GameManager>().ClearObj(other.tag);
+            other.gameObject.SetActive(false);
+        }
+
+            current_health = current_health - damageAmount;
         SetHealthText();
         damageAmount = 0;
     }
 
     void SetHealthText()
     {
-        FindObjectOfType<Level1>().GetHealth();
+        FindObjectOfType<GameManager>().GetHealth();
         if (current_health <= 0)
         {
             healthText.text = "HEALTH: DEAD";
             FindObjectOfType<GameManager>().EndGame();
-            GetComponent<PlayerInput>().enabled = false;
         }
         else
         {
             healthText.text = "HEALTH: " + current_health.ToString();
         }
+        FindObjectOfType<GameManager>().SetHealth(current_health);
     }
 
     public string SetPart()
@@ -105,12 +142,15 @@ public class GaryController : MonoBehaviour
         body.AddForce(movement);
     }
 
-    //SOLO  PARA TEST AMBIENTE
+    
     public void Camera(InputValue value)
     {
-         Vector2 cam_mov = value.Get<Vector2>();
-         camera_mov += new Vector3(0f, cam_mov.x * cameraSensitivity, 0f);
-         FindObjectOfType<CameraMov>().Rotation(camera_mov);
+         if(SaveInfo.pov == false)
+        {
+            Vector2 cam_mov = value.Get<Vector2>();
+            camera_mov += new Vector3(-cam_mov.y * cameraSensitivity, cam_mov.x * cameraSensitivity, 0f);
+            FindObjectOfType<CameraMov>().Rotation(camera_mov);
+        }
     }
 
    

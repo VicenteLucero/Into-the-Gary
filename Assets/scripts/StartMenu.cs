@@ -34,12 +34,12 @@ public class StartMenu : MonoBehaviour
 
             if (level == 1)
             {
-                canvasText.text = "" + "\r\n" + "";
+                canvasText.text = "Que Sorpresa...Llegaste a la Cocina" + "\r\n" + "¿Tienes hambre?" + "\r\n" + "Preparate algo de comer idiota";
             }
 
             if (level == 2)
             {
-                canvasText.text = "" + "\r\n" + "" + "\r\n" + "";
+                canvasText.text = "Guatita Llena" + "\r\n" + "Corazon contento" + "\r\n" + "Como decia mi abuelita";
             }
 
             if (level == 3)
@@ -81,6 +81,13 @@ public class StartMenu : MonoBehaviour
         {
             SceneManager.LoadScene("Menu");
         }
+        if(level == 2)
+        {
+            level += 1;
+            SaveInfo.SetLevel(level + 1);
+            SaveInfo.pov = true;
+            SceneManager.LoadScene("perspective_2");
+        }
         else
         {
             level += 1;
@@ -108,6 +115,7 @@ public class StartMenu : MonoBehaviour
     public void BackButton()
     {
         level = 0;
+        SaveInfo.pov = false;
         SceneManager.LoadScene("Menu");
     }
 
@@ -128,8 +136,9 @@ public class StartMenu : MonoBehaviour
     public void Level3()
     {
         level = 2;
+        SaveInfo.pov = true;
         SaveInfo.SetLevel(level + 1);
-        SceneManager.LoadScene("House");
+        SceneManager.LoadScene("perspective_2");
     }
 
     public void Level4()

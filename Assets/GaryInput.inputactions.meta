@@ -5,8 +5,6 @@ ScriptedImporter:
     11400000: <root>
     11400006: Inputs /Movement
     11400008: Inputs /Camera
-    11400016: Inputs /Back
-    11400018: Inputs /Quit
   externalObjects: {}
   userData: 
   assetBundleName: 

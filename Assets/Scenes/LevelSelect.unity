@@ -417,7 +417,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 61186867}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 86718815}
+        m_MethodName: Level2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &61186867
@@ -578,7 +589,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 218242248}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 86718815}
+        m_MethodName: Level3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &218242248
@@ -1853,7 +1875,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Level 2
 
-    (Comming soon)'
+    Ve a la Cocina'
 --- !u!222 &1093938834
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2063,7 +2085,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Level 3
 
-    (Comming Soon)'
+    Prepara Desayuno'
 --- !u!222 &1218574452
 CanvasRenderer:
   m_ObjectHideFlags: 0

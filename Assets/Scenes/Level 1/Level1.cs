@@ -4,38 +4,23 @@ using UnityEngine.SceneManagement;
 
 public class Level1 : MonoBehaviour
 {
-    static int health = 100;
+    
     static int objective = 0;
-    static Vector3 gary_position = new Vector3(3.87f, -0.45f, -15.76f);
-    static Vector3 gary_rotation = new Vector3(0f, 266f, 0f);
     public GameObject objectiveText;
     static string objText = "Ve a la Mesa";
 
     void Start()
     {
-        
+        if(SaveInfo.GetLevel() == 1)
+        {
+            SetObjetiveText(objText);
+        }
     }
 
-    public Vector3 GetGPosition()
-    {
-        return gary_position;
-    }
+    
 
-    public Vector3 GetGRotation()
-    {
-        return gary_rotation;
-    }
+    
 
-    public int GetHealth()
-    {
-        return health;
-    }
-
-    public void SetGPosition(Vector3 pos, Vector3 rot)
-    {
-        gary_position = pos;
-        gary_rotation = rot;
-    }
 
     public void ClearObjective(string tag)
     {
@@ -43,6 +28,9 @@ public class Level1 : MonoBehaviour
         {
             objective = 1;
             objText = "Toma tus pastillas";
+            SaveInfo.gPosition = GameObject.FindGameObjectWithTag("gary").transform.position;
+            SaveInfo.gRotation = GameObject.FindGameObjectWithTag("gary").transform.eulerAngles;
+            SaveInfo.pov = true;
             SceneManager.LoadScene("perspective_1");
         }
 
@@ -56,6 +44,7 @@ public class Level1 : MonoBehaviour
         {
             objective = 3;
             objText = "Go to the Kitchen";
+            SaveInfo.pov = false;
             SceneManager.LoadScene("Level1");
         }
 
@@ -68,7 +57,7 @@ public class Level1 : MonoBehaviour
 
     public void SetObjetiveText(string newObj)
     {
-        objectiveText = GameObject.FindGameObjectWithTag("ObjectiveText");
+        
         objectiveText.GetComponent<Text>().text = "OBJECTIVE: " + newObj;
     }
 }
