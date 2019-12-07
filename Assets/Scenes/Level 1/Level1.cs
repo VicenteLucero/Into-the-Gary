@@ -15,6 +15,10 @@ public class Level1 : MonoBehaviour
         {
             SetObjetiveText(objText);
         }
+        if(SaveInfo.GetLevel() == 1 && objective == 0)
+        {
+            
+        }
     }
 
     

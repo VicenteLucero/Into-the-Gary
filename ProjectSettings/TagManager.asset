@@ -25,6 +25,7 @@ TagManager:
   - ham
   - potion
   - jar
+  - body
   layers:
   - Default
   - TransparentFX

@@ -1009,6 +1009,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Split Gary joints
       objectReference: {fileID: 0}
+    - target: {fileID: 8594814743060722380, guid: 3688fd76f006340469064a78f1ae7e94,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8594814743060722370, guid: 3688fd76f006340469064a78f1ae7e94,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1062,6 +1067,56 @@ PrefabInstance:
     - target: {fileID: 8594814743060722370, guid: 3688fd76f006340469064a78f1ae7e94,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594814742208781914, guid: 3688fd76f006340469064a78f1ae7e94,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594814742241083045, guid: 3688fd76f006340469064a78f1ae7e94,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594814742285177095, guid: 3688fd76f006340469064a78f1ae7e94,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594814743149961861, guid: 3688fd76f006340469064a78f1ae7e94,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594814743246646600, guid: 3688fd76f006340469064a78f1ae7e94,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594814743391513313, guid: 3688fd76f006340469064a78f1ae7e94,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594814743561847020, guid: 3688fd76f006340469064a78f1ae7e94,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594814743564144497, guid: 3688fd76f006340469064a78f1ae7e94,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594814743568292830, guid: 3688fd76f006340469064a78f1ae7e94,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594814743591878655, guid: 3688fd76f006340469064a78f1ae7e94,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

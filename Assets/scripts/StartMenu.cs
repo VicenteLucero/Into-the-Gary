@@ -77,11 +77,11 @@ public class StartMenu : MonoBehaviour
 
     public void ContinueButton()
     {
-        if(level == 7)
+        if(level == 2)
         {
             SceneManager.LoadScene("Menu");
         }
-        if(level == 2)
+        if(level == 1)
         {
             level += 1;
             SaveInfo.SetLevel(level + 1);

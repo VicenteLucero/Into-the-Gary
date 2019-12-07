@@ -63,13 +63,13 @@ public class GaryController : MonoBehaviour
 
         if (other.gameObject.CompareTag("pills"))
         {
-            
+            other.gameObject.GetComponent<AudioSource>().Play();
             FindObjectOfType<GameManager>().ClearObj(other.tag);
         }
 
         if (other.gameObject.CompareTag("Water"))
         {
-            
+            other.gameObject.GetComponent<AudioSource>().Play();
             FindObjectOfType<GameManager>().ClearObj(other.tag);
         }
 
@@ -80,11 +80,13 @@ public class GaryController : MonoBehaviour
         if (other.gameObject.CompareTag("potion"))
         {
             damageAmount = 20;
+            other.gameObject.GetComponent<AudioSource>().Play();
             other.gameObject.SetActive(false);
         }
         if (other.gameObject.CompareTag("knife"))
         {
             damageAmount = 35;
+            other.gameObject.GetComponent<AudioSource>().Play();
         }
 
         if (other.gameObject.CompareTag("bread") || other.gameObject.CompareTag("jar") || other.gameObject.CompareTag("ham"))

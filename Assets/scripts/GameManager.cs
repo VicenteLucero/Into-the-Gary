@@ -17,10 +17,12 @@ public class GameManager : MonoBehaviour
             GameObject.FindGameObjectWithTag("gary").transform.position = SaveInfo.gPosition;
             GameObject.FindGameObjectWithTag("gary").transform.eulerAngles = SaveInfo.gRotation;
         }
-        else
+        if (currentObjective == 0 && (SaveInfo.pov == false || SaveInfo.pov == true) )
         {
-            health = 100; 
+            health = 100;
+            GameObject.FindGameObjectWithTag("body").GetComponent<AudioSource>().Play();
         }
+
 
         currentLevel = SaveInfo.GetLevel();
 
